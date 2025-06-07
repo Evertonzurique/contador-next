@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>contadores</title>
+  <title>Contadores</title>
   <!-- <style>
     button{
       width: 10rem;
@@ -14,12 +14,28 @@
     }
   </style> -->
 </head>
-<body>
-  <h1 style="color: red;">contadores</h1>
-  <button onclick = "adicionar()">0</button>
+<body style=" 
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;">
+
+  
+  <h1 style="color: red;
+  border: 0.1rem solid black;
+  width: 15rem;
+  text-align: center;
+  background-color: aquamarine;
+  ">contadores</h1>
+
+  <button id="botao-1"   onclick = "adicionar()"></button>
+
+  <button id="botao-2"   onclick="adicionar2()">0</button>
 
   <script>
     var numero = 0;
+    var num2 = 0;
 
     function adicionar() {
      
@@ -28,14 +44,34 @@
       render();
     } 
 
+    function adicionar2() {
+
+        num2++;
+        console.log("1");
+        render2();
+      } 
+
     function render() {
-      document.querySelector("button").innerText ="Total "+numero;
-      console.log("2");
-
-    }
-
+      // ou no lugar de .innerText ="Total "+numero; pode ser 'total ${numero}' - inner dentro do botao
+      document.querySelector("#botao-1" ).innerText ="Total "+numero;
+      console.log("2");  
+     
+    }   
+    
+    function render2() {
+      
+      document.querySelector("#botao-2").innerText = "Total " + num2;
+        console.log("2");
+  }
+    
     render();
+    render2();
   </script>
+  
+
+ 
+
+  
 
 </body>
 </html>
